@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Recipe = ({ meals }) => {
+  console.log(meals);
   return (
     meals &&
     meals.map((meal) => {
@@ -17,9 +20,12 @@ const Recipe = ({ meals }) => {
             <p className="my-4 text-gray-800">{meal.strArea}</p>
             <p className="text-gray-800">{meal.strCategory}</p>
           </div>
-          <button className="w-full absolute bottom-0 text-2xl py-2 bg-orange-500 rounded-b-lg">
+          <Link
+            to={`food/${meal.idMeal}`}
+            className="w-full text-center absolute bottom-0 text-2xl py-2 bg-orange-500 rounded-b-lg"
+          >
             More...
-          </button>
+          </Link>
         </div>
       );
     })

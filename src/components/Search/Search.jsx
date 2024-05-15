@@ -16,13 +16,12 @@ const Search = ({ setQuery }) => {
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient(to bottom, #4d4c4c4f, #000), URL(${Pizza})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(4, 4, 4, 0), rgba(4, 4, 4, 0.6)), URL(${Pizza})`,
       }}
-      className="bg-cover h-[70vh] mb-12 flex justify-center items-center flex-col"
+      className="bg-cover h-[70vh] mb-12 flex justify-center items-center text-center flex-col"
     >
       <div className="text-5xl mb-20">
-        <h1 className="text-white ">Welcome to the</h1>
-        <h1 className="text-orange-500 mt-4">Land of Food</h1>
+        <h1 className="text-white ">Welcome to the Land of <span className="font-semibold bg-orange-500 p-1 rounded-lg">Food</span></h1>
       </div>
       <form
         onSubmit={submitForm}
