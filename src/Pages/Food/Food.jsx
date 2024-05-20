@@ -14,34 +14,52 @@ const Food = () => {
       });
   }, []);
 
-  console.log(meal)
-  // const [ingredient, setIngredient] = useState([]);
-  // const [measure, setMeasure] = useState([]);
-  // let i = false;
-  // let j = 1;
+  const ingeredientArr = [];
+  const measureArr = [];
   
-  // console.log(ingredient)
-  // console.log(meal)
+  for (let item in meal) {
+    if (item.includes("strIngredient")) {
+      if (meal[item] === "") {
+        break;
+      } else {
+        ingeredientArr.push(meal[item]);
+      }
+    }
+  }
+  for (let measures in meal) {
+    if (measures.includes("strMeasure")) {
+      if (meal[measures] === " ") {
+        break;
+      } else {
+        measureArr.push(meal[measures]);
+      }
+    }
+  }
 
-  // while(i) {
-  //   if(meal.strIngredient+String(j) !== ''){
-  //     setIngredient(...ingredient, meal.strIngredient+String(j))
-  //   j++
-  //   } else {
-  //     i = false;
-  //   }
-  // }
+  let finalArr = [];
+  // let finalArr = ingeredientArr.concat(measureArr)
+
+  // console.log(typeof ingeredientArr,typeof  measureArr)
+
+  // console.log(typeof Object.values(ingeredientArr))
+
+  // let j = 0;
+  for(let j = 0; ingeredientArr.length > j; j++) {
+    // finalArr.push(ingeredientArr.keys());
+    finalArr(...finalArr, ingeredientArr[j])
+    j++;
+  }
+  console.log(finalArr)
+
+  // let name = ["sara , reza , ali"]
+  // let family = ["ahmadi , mosavi ,moradi"]
 
 
   return (
-      <div>
-        <h1>{meal?.strMeal}</h1>
-        <h3>{meal?.strCategory}</h3>
-        {
-          
-        }
-      </div>
-  )
+    <main className="main-content bg-whitesmoke">
+      <p>hi</p>
+    </main>
+  );
 };
 
 export default Food;
