@@ -16,7 +16,7 @@ const Search = ({ setQuery }) => {
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(4, 4, 4, 0), rgba(4, 4, 4, 0.6)), URL(${Pizza})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(4, 4, 4, 0), rgba(4, 4, 4, 0.8)), URL(${Pizza})`,
       }}
       className="bg-cover h-[70vh] mb-12 flex justify-center items-center text-center flex-col"
     >
