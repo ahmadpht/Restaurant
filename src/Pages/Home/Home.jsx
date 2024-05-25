@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 //component
 import Search from "../../components/Search/Search";
-import Recipe from "../../components/Recipe/Recipe";
+import Food from "../../components/Food/Food";
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -21,7 +21,7 @@ const Home = () => {
     <div>
       <Search setQuery={setQuery} />
       <div className="grid grid-cols-4 justify-items-center">
-        <Recipe meals={recipes} />
+        <Food meals={recipes} />
       </div>
     </div>
   );

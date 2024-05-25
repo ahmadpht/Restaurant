@@ -1,18 +1,23 @@
-import { BrowserRouter as Router , Routes , Route } from "react-router-dom"
-import Home from "./Pages/Home/Home"
-import Food from "./Pages/Food/Food"
-import ListByIngredient from "./components/ListByIngredient/ListByIngredient"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Recipe from "./Pages/Recipe/Recipe";
+import ListByIngredient from "./components/ListByIngredient/ListByIngredient";
+// context
+import FoodContext from "./Context/FoodContext";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/food/:id" element={<Food />} />
-        <Route path="/ingredient/:name" element={<ListByIngredient />} />
-      </Routes>
-    </Router>
-  )
-}
+    <FoodContext>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+          <Route path="/ingredient/:id" element={<ListByIngredient />} />
+          <Route path="/area/:id" />
+        </Routes>
+      </Router>
+    </FoodContext>
+  );
+};
 
-export default App
+export default App;

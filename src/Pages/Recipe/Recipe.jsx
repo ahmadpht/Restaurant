@@ -2,8 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Ingredients from "../../components/Ingredients/Ingredients";
+import Tags from "../../components/Tags/Tags";
 
-const Food = () => {
+const Recipe = () => {
   const [meal, setMeal] = useState([]);
   const params = useParams();
   const finalArr = [];
@@ -12,11 +13,18 @@ const Food = () => {
   const measureArr = [];
 
   useEffect(() => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`)
       .then((res) => {
         setMeal(res.data.meals[0]);
       });
+      
   }, [params]);
 
   for (let item in meal) {
@@ -46,11 +54,7 @@ const Food = () => {
     <div className="max-w-screen flex flex-col justify-center items-center my-10">
       <div className="w-96 flex flex-col">
         <img className="w-96 h-96" src={meal.strMealThumb} alt={meal.idMeal} />
-        <div className="h-10 w-56 flex justify-evenly items-center">
-          <p>{meal.strArea}</p>
-          <p>{meal.strCategory}</p>
-          <p>{meal.strTags}</p>
-        </div>
+        <Tags meal={meal} />
         <p className="text-5xl font-semibold">{meal.strMeal}</p>
         <div className="my-10">
           {finalArr.map((item, index) => {
@@ -72,4 +76,4 @@ const Food = () => {
   );
 };
 
-export default Food;
+export default Recipe;
