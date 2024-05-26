@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Ingredients from "../../components/Ingredients/Ingredients";
 import Tags from "../../components/Tags/Tags";
+import { FaYoutube } from "react-icons/fa";
+import { ImBook } from "react-icons/im";
 
 const Recipe = () => {
   const [meal, setMeal] = useState([]);
@@ -49,9 +51,9 @@ const Recipe = () => {
   for (let i = 0; i < ingredientArr.length; i++) {
     finalArr.push(`${ingredientArr[i]} ${measureArr[i]}`);
   }
-  console.log(meal);
+
   return (
-    <div className="max-w-screen flex flex-col justify-center items-center my-10">
+    <div className="max-w-screen flex flex-col justify-center items-center mt-32">
       <div className="w-96 flex flex-col">
         <img className="w-96 h-96" src={meal.strMealThumb} alt={meal.idMeal} />
         <Tags meal={meal} />
@@ -67,8 +69,8 @@ const Recipe = () => {
         </div>
         <p className="text-justify">Instructions: {meal.strInstructions}</p>
         <div className="flex justify-between my-10">
-          <a href={meal.strSource}>Source</a>
-          <a href={meal.strYoutube}>Youtube</a>
+          <a href={meal.strSource} className="text-blue-700 text-3xl" title="Source"><ImBook /></a>
+          <a href={meal.strYoutube} className="text-red-500 text-4xl" title="Instruction Video"><FaYoutube /></a>
         </div>
       </div>
         <Ingredients ingredientsArr={ingredientArr} />

@@ -8,7 +8,6 @@ import Food from "../../components/Food/Food";
 const Home = () => {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
-
   useEffect(() => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
