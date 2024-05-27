@@ -12,6 +12,7 @@ const RandomMeal = () => {
       .get("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => setMeal(res.data.meals[0]));
   }, [isTrue]);
+
   return (
     <Link to={`/recipe/${meal.idMeal}`} onClick={() => setIsTrue(!isTrue)}>
       <FaShuffle />

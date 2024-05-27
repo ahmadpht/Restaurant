@@ -51,6 +51,7 @@ const Recipe = () => {
   for (let i = 0; i < ingredientArr.length; i++) {
     finalArr.push(`${ingredientArr[i]} ${measureArr[i]}`);
   }
+  // const price = meal.strMeal.length;
 
   return (
     <div className="max-w-screen flex flex-col justify-center items-center mt-32">
@@ -58,6 +59,7 @@ const Recipe = () => {
         <img className="w-96 h-96" src={meal.strMealThumb} alt={meal.idMeal} />
         <Tags meal={meal} />
         <p className="text-5xl font-semibold">{meal.strMeal}</p>
+        <p>Price : ${meal?.strMeal?.length}</p>
         <div className="my-10">
           {finalArr.map((item, index) => {
             return (
