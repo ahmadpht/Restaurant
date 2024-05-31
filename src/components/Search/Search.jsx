@@ -1,16 +1,19 @@
 //react
 import { IoSearch } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
 //assets
 import Pizza from "../../assets/BGPizza.jpg";
 
-const Search = ({ setQuery }) => {
+import { MainContext } from "../../Context/FoodContext";
+
+const Search = () => {
   const [search, setSearch] = useState("");
+  const  {setSelectTag} = useContext(MainContext);
 
   const submitForm = (e) => {
       e.preventDefault();
-      setQuery(search);
       setSearch("");
+      setSelectTag(`search.php?s=${search}`)
   };
 
   return (

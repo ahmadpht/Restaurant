@@ -15,9 +15,8 @@ const Recipe = () => {
   const measureArr = [];
 
   useEffect(() => {
-
     window.scrollTo({
-      top: 0,
+      top: 1,
       behavior: "smooth",
     })
 
@@ -51,7 +50,6 @@ const Recipe = () => {
   for (let i = 0; i < ingredientArr.length; i++) {
     finalArr.push(`${ingredientArr[i]} ${measureArr[i]}`);
   }
-  // const price = meal.strMeal.length;
 
   return (
     <div className="max-w-screen flex flex-col justify-center items-center mt-32">
