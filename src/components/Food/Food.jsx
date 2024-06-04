@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const Food = ({ meals }) => {
   return (
     meals &&
-    meals.map((meal) => {
+    meals.map((meal , idx) => {
       return (
         <div
           className="w-96 h-96 border-2 border-orange-500 flex items-center justify-center pb-10 mt-40 relative rounded-xl"
-          key={Math.random()}
+          key={idx}
         >
           <img
             className="w-56 h-56 rounded-full absolute -top-20 border-8 border-orange-500 bg-white"
