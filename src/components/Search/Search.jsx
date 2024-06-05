@@ -21,7 +21,7 @@ const Search = () => {
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(4, 4, 4, 0), rgba(4, 4, 4, 0.8)), URL(${Pizza})`,
       }}
-      className="bg-cover h-[70vh] mb-12 flex justify-center items-center text-center flex-col"
+      className="bg-cover h-[70vh] flex justify-center items-center text-center flex-col"
     >
       <div className="text-5xl mb-20">
         <h1 className="text-white ">Welcome to the Land of <span className="font-semibold bg-orange-500 p-1 rounded-lg">Food</span></h1>

@@ -27,11 +27,14 @@ const Home = () => {
   return (
      <div className="relative">
       <Search />
-      <div className="mb-40 grid grid-cols-4 justify-items-center">
+      <div className={`${recipes ? 'justify-items-center mb-20' : null} grid grid-cols-4 overflow-x-hidden`}>
       {
         recipes ?
         <Food meals={recipes} />
-        : <h1>could not find</h1>}
+        : <div className="w-screen h-40 flex flex-col justify-center items-center">
+            <h1>Sorry, Food not Found!</h1>
+            <button onClick={() => setSelectTag('search.php?s=')} className="bg-orange-500 text-white w-32 h-10 my-4">Back</button>
+          </div>}
         <div onClick={() => setIsOpen(!isOpen)} className="fixed bottom-10 right-4 w-20 h-20 shadow-xl bg-orange-500 rounded-full flex justify-center items-center text-white hover:text-gray-300 ">
           <FaFilter className="text-2xl"/>
         </div>
