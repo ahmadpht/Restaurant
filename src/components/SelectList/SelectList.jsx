@@ -20,7 +20,7 @@ const SelectList = ({list}) => {
 
   return (
     <div>
-        <select className='bg-orange-500 text-white outline-none border-none cursor-pointer' onChange={e => setSelectTag(`filter.php?${list}=${e.target.value}`)}>
+        <select className='bg-orange-500 p-1 text-center text-white outline-none border-none cursor-pointer' onChange={e => setSelectTag(`filter.php?${list}=${e.target.value}`)}>
             {
                 itemList && itemList?.map((item, idx) => {
                 return (
