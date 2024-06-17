@@ -2,6 +2,7 @@ import { IoHome } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import RandomMeal from "../RandomMeal/RandomMeal";
 import { useEffect, useState } from "react";
+import Theme from "../Theme/Theme";
 
 const Header = () => {
 
@@ -26,6 +27,7 @@ const Header = () => {
         <IoHome className="text-orange-500" />
       </Link>
       <RandomMeal />
+      <Theme />
     </div>
   );
 };

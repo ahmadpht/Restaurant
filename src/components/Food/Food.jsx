@@ -13,6 +13,7 @@ const Food = ({ meals }) => {
             className="w-56 h-56 rounded-full absolute -top-20 border-8 border-orange-500 bg-white"
             src={`${meal.strMealThumb}/preview`}
             alt=""
+            loading="lazy"
           />
           <p className={`text-3xl absolute text-center mx-4 ${meal.strMeal.length >= 50 ? 'top-44' : 'top-52'}`}>{meal.strMeal}</p>
           <Link

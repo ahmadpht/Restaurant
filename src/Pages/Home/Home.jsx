@@ -25,9 +25,9 @@ const Home = () => {
     }, [selectTag]);
 
   return (
-     <div className="relative">
+     <div className="relative bg-white dark:bg-darkMode dark:text-gray-300">
       <Search />
-      <div className={`${recipes ? 'justify-items-center mb-20' : null} grid grid-cols-4 overflow-x-hidden`}>
+      <div className={`${recipes ? 'justify-items-center pb-20' : null} grid grid-cols-4 overflow-x-hidden`}>
       {
         recipes ?
         <Food meals={recipes} />
